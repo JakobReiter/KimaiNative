@@ -18,6 +18,9 @@ import {connect} from 'react-redux';
 import color from '../colors';
 import * as settingActions from '../actions/settingsSaveActions';
 
+//Prefill for Faster Testing
+import {username, password, server} from '../preFilled';
+
 class settingsForm extends Component {
 
     handleSubmit(isValid, values, validationResults, postSubmit = null, modalNavigator = null) {
@@ -48,9 +51,9 @@ class settingsForm extends Component {
                     formName='settingsForm'
                     clearOnClose={false} // delete the values of the form when unmounted
                     defaults={{
-                      server: '',
-                      username: '',
-                      password: '',
+                      server: server || "",
+                      username: username || "",
+                      password: password || "",
                     }}
 
                     validators={{

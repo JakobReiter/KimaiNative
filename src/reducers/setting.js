@@ -5,9 +5,9 @@
 import * as types from '../actions/actionTypes';
 
 const initialState = {
-    server: null,
-    username: null,
-    password: null,
+    server: "",
+    username: "",
+    password: "",
 };
 
 export default function setting(state = initialState, action = {}) {

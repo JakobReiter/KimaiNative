@@ -38,14 +38,12 @@ const SECTIONS = [
 
 class FilterSection extends Component {
 
-    componentDidMount() {
-        this._updateFilters.call(this);
-    }
-
     _updateFilters() {
-        const {state, actions} = this.props;
-        actions.loadProjects(state.settings);
-        actions.loadTasks(state.settings);
+        if(this.props.state.settings && !(this.props.state.filters.projects || this.props.state.filters.tasks)) {
+            const { state, actions } = this.props;
+            actions.loadProjects(state.settings);
+            actions.loadTasks(state.settings);
+        }
     }
 
     _renderHeader(section, index, isActive) {
@@ -88,6 +86,7 @@ class FilterSection extends Component {
                     renderHeader={this._renderHeader.bind(this)}
                     renderContent={this._renderContent.bind(this)}
                     style={styles.accordion}
+                    onChange={this._updateFilters.call(this)}
                 />
             </View>
         )
