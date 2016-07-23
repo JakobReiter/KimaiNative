@@ -8,9 +8,9 @@ import React, { Component } from 'react';
 import { StyleSheet,  Text,  View } from 'react-native';
 import Tabs from 'react-native-scrollable-tab-view';
 
-import TabRecord from './containers/tab_record';
-import TabSettings from './containers/tab_settings';
-import TabTimeTable from './containers/tab_timetable';
+import TabRecord from './components/tab_record';
+import TabSettings from './components/tab_settings';
+import TabTimeTable from './components/tab_timetable';
 
 import color from './colors';
 
@@ -26,6 +26,7 @@ export default class KimaiNative extends Component {
                     tabBarActiveTextColor={color.dark_highlight}
                     tabBarInactiveTextColor={color.inactive}
                     tabBarUnderlineColor={color.dark_highlight}
+                    initialPage={2}
                 >
                     <TabRecord tabLabel="Record" />
                     <TabTimeTable tabLabel="Timetable" />

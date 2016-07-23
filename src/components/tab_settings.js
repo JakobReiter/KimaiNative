@@ -11,12 +11,14 @@ import {
     View
 } from 'react-native';
 
+import SettingsForm from '../containers/settingsForm';
+
 export default class tab_settings extends Component {
 
     render() {
         return (
             <View style={styles.container}>
-                <Text>Tab Settings</Text>
+                <SettingsForm/>
             </View>
         )
     }
@@ -25,7 +27,7 @@ export default class tab_settings extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        padding: 20,
     },
 });
